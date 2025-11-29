@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Clove Dental Landing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --orange: #ff8a2a;
+      --orange-dark: #f46c00;
+      --brown: #4a2414;
+      --bg-cream: #fff6ea;
+      --text-dark: #333333;
+      --border-gray: #ebebeb;
+      --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.06);
+      --radius-lg: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: var(--text-dark);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+    }
+
+    /* ---------- TOP NAVBAR ---------- */
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 40px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo span.symbol {
+      color: #f68b1f;
+      font-size: 34px;
+    }
+
+    .logo span.text {
+      color: #f68b1f;
+    }
+
+    .logo span.sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #b37d4b;
+      margin-left: 4px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 10px rgba(244, 127, 15, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+    }
+
+    .phone-box {
+      border: 2px solid #00a651;
+      color: #00a651;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #eafff3;
+    }
+
+    .phone-circle {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #00a651;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 13px;
+    }
+
+    /* ---------- HERO SECTION ---------- */
+
+    .hero-wrapper {
+      padding: 0 40px 0 40px;
+    }
+
+    .hero {
+      margin-top: 6px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 2fr 1.1fr;
+      min-height: 420px;
+    }
+
+    .hero-left {
+      position: relative;
+      background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0.8),
+          rgba(255, 255, 255, 0.45)
+        ),
+        url("https://images.pexels.com/photos/3845765/pexels-photo-3845765.jpeg?auto=compress&cs=tinysrgb&w=1200")
+          center/cover no-repeat;
+    }
+
+    .hero-overlay-card {
+      position: absolute;
+      top: 18%;
+      left: 8%;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 22px 26px;
+      border-radius: 12px;
+      max-width: 360px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-overlay-card h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .hero-overlay-card p {
+      font-size: 13px;
+      color: #666666;
+      margin-bottom: 16px;
+    }
+
+    .hero-doctor-strip {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .doctor-card {
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+      pointer-events: auto;
+    }
+
+    .doctor-img {
+      width: 220px;
+      height: 320px;
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+      background: #ffffff;
+    }
+
+    .doctor-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* right hero panel */
+
+    .hero-right {
+      background: var(--bg-cream);
+      padding: 32px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-right h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .hero-right p {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-label {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: block;
+      color: #555;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 40px;
+      border: 1px solid #ddd;
+      outline: none;
+      font-size: 13px;
+      background: #fff;
+    }
+
+    .input-field:focus {
+      border-color: var(--orange);
+    }
+
+    .captcha-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .captcha-box {
+      border-radius: 40px;
+      background: #3f1a0e;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 0;
+      letter-spacing: 2px;
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 10px 0 16px;
+      font-size: 11px;
+      color: #666;
+    }
+
+    .checkbox-row input {
+      margin-top: 2px;
+    }
+
+    .btn-wide {
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: 40px;
+      background: var(--orange);
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(244, 127, 15, 0.45);
+    }
+
+    .btn-wide:hover {
+      background: var(--orange-dark);
+    }
+
+    /* ---------- STATS STRIP ---------- */
+
+    .stats-strip {
+      margin: 18px 40px 26px 40px;
+      border-radius: var(--radius-lg);
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 12px;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .stat-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: #fff5eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange);
+      font-size: 16px;
+    }
+
+    .stat-text span {
+      display: block;
+      line-height: 1.1;
+    }
+
+    .stat-number {
+      font-weight: 700;
+      color: #1f1f1f;
+    }
+
+    .stat-label {
+      color: #777;
+      font-size: 11px;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-left {
+        min-height: 320px;
+      }
+
+      .hero-right {
+        padding: 24px 22px 28px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .navbar,
+      .hero-wrapper,
+      .stats-strip {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .navbar {
+        gap: 10px;
+      }
+
+      .nav-actions {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .hero-overlay-card {
+        left: 5%;
+        right: 5%;
+      }
+
+      .doctor-card {
+        transform: scale(0.85);
+      }
+
+      .stats-strip {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+     *,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #ffffff;           /* warm light background */
+  color: #333;
+}
+
+.rct-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 24px 16px 40px;
+  text-align: center;
+}
+
+.rct-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.rct-subtitle {
+  font-size: 14px;
+  color: #666;
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+
+.rct-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.rct-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  max-width: 520px;
+  width: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rct-card-alt {
+  background: linear-gradient(90deg, #ffe7e9 0%, #ffffff 45%);
+}
+
+.rct-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.rct-image-wrapper {
+  flex: 0 0 40%;
+  background-color: #ffe1e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.rct-image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.rct-content {
+  flex: 1;
+  text-align: left;
+  padding: 20px 22px 18px;
+}
+
+.rct-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.rct-card-tagline {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+ .rct-small-heading {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ff7a00;
+  margin-bottom: 6px;
+}
+
+.rct-list {
+  list-style: none;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.rct-list li::before {
+  content: "•";
+  color: #ff7a00;
+  font-weight: 700;
+  display: inline-block;
+  width: 10px;
+  margin-left: -10px;
+}
+
+.rct-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rct-price-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.rct-price-label {
+  font-size: 11px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.rct-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff7a00;
+}
+
+.rct-btn {
+  border: none;
+  outline: none;
+  background-color: #ff7a00;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.rct-btn:hover {
+  background-color: #ff8f1f;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(255, 122, 0, 0.35); /* soft raised effect */
+}
+
+/* Responsive tweaks */
+
+@media (max-width: 900px) {
+  .rct-section {
+    padding: 16px 12px 32px;
+  }
+
+  .rct-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .rct-cards {
+    gap: 16px;
+  }
+
+  .rct-card {
+    flex-direction: column;
+  }
+
+  .rct-image-wrapper {
+    flex-basis: auto;
+  }
+
+  .rct-content {
+    padding: 18px 16px 16px;
+  }
+
+  .rct-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rct-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+:root {
+  --orange: #f77f2a;
+  --dark: #111827;
+  --card-bg: #061320;
+  --cream: #fff5ea;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --shadow-soft: 0 20px 40px rgba(15, 23, 42, 0.18);
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 60px 7vw 80px;
+  font-family: var(--font-main);
+  background: #faf5ff;
+  color: var(--text-main);
+}
+
+/* Safety section */
+
+.safety .section-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.safety h2 {
+  margin: 0 0 6px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.safety p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.safety-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  flex: 1 1 280px;
+  min-height: 220px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Fake background images using gradients (replace with real images if needed) */
+.card-1 {
+  background: linear-gradient(120deg, #e5f2ff, #f1f5f9);
+}
+.card-2 {
+  background: linear-gradient(120deg, #dbeafe, #e0f2fe);
+}
+.card-3 {
+  background: linear-gradient(120deg, #ffedd5, #fed7aa);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 22px 24px 24px;
+  background: rgba(9, 9, 11, 0.92);
+  color: #f9fafb;
+}
+
+.card-overlay h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.card-overlay p {
+  margin: 0 0 14px;
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #111827;
+  background: var(--orange);
+  cursor: pointer;
+}
+
+/* Reviews section */
+
+.reviews {
+  margin-top: 60px;
+  background: #fff;
+  border-radius: var(--radius-xl);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(0, 3fr);
+  gap: 30px;
+}
+
+.reviews-summary {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.google-logo,
+.mini-google {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #4285f4;
+  font-size: 22px;
+}
+
+.rating-value {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.rating-text {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.reviews-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.review-card {
+  flex: 1 1 230px;
+  background: #f9fafb;
+  border-radius: var(--radius-lg);
+  padding: 16px 16px 18px;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fed7aa, #fb923c);
+}
+
+.review-header h4 {
+  margin: 0 0 2px;
+  font-size: 14px;
+}
+
+.stars {
+  font-size: 13px;
+  color: #facc15;
+}
+
+.mini-google {
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+}
+
+.review-text {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .reviews {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 32px 16px 48px;
+  }
+  .safety h2 {
+    font-size: 24px;
+  }
+  .card-overlay {
+    padding: 18px 18px 20px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="text">clove</span><span class="symbol">:)</span>
+      <span class="sub">DENTAL</span>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-primary">
+        <span>📅</span>
+        <span>Book Appointment</span>
+      </button>
+      <div class="phone-box">
+        <div class="phone-circle">📞</div>
+        <span>985-6589-510</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="hero-wrapper">
+    <section class="hero">
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-overlay-card">
+          <h2>Painless Root Canal Treatment in Delhi</h2>
+          <p>Expert RCT. Zero pain. Right here in Delhi.</p>
+          <button class="btn-primary">Book Appointment</button>
+        </div>
+
+        <div class="hero-doctor-strip">
+          <div class="doctor-card">
+            <div class="doctor-img">
+              <!-- Replace with your own image if needed -->
+              <img
+                src="https://images.pexels.com/photos/3825529/pexels-photo-3825529.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Doctor"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT FORM -->
+      <div class="hero-right">
+        <h2>Get Expert Dental Guidance in Delhi</h2>
+        <p>
+          Book your free consultation today and take the first step towards
+          healthy, beautiful teeth.
+        </p>
+
+        <form id="consultationForm">
+          <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input
+              class="input-field"
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="mobile">Mobile Number</label>
+            <input
+              class="input-field"
+              id="mobile"
+              name="mobile"
+              type="tel"
+              pattern="[0-9]{10}"
+              maxlength="10"
+              placeholder="Enter 10-digit mobile number"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <span class="form-label">Captcha</span>
+            <div class="captcha-row">
+              <input
+                class="input-field"
+                id="captchaInput"
+                type="text"
+                placeholder="Enter captcha"
+                required
+              />
+              <div class="captcha-box" id="captchaText">1514</div>
+            </div>
+          </div>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="agree" required />
+            <label for="agree">
+              I agree to CLOVE Dental's Terms and Privacy Policy and consent to
+              contact via phone, email, or SMS.
+            </label>
+          </div>
+
+          <button class="btn-wide" type="submit">
+            Book a Free Consultation
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- STATS STRIP -->
+  <section class="stats-strip">
+    <div class="stat-item">
+      <div class="stat-icon">🏥</div>
+      <div class="stat-text">
+        <span class="stat-number">600+ Clinics</span>
+        <span class="stat-label">Across India</span>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">🧑‍⚕</div>
+      <div class="stat-text">
+        <span class="stat-number">1300+ Dentists</span>
+        <span class="stat-label">Experienced team</span>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">😊</div>
+      <div class="stat-text">
+        <span class="stat-number">30 L+ Happy Patients</span>
+        <span class="stat-label">Smiles delivered</span>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">🦷</div>
+      <div class="stat-text">
+        <span class="stat-number">35K+ Ortho Cases</span>
+        <span class="stat-label">Handled with care</span>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">🪛</div>
+      <div class="stat-text">
+        <span class="stat-number">55K+ Implants</span>
+        <span class="stat-label">Successfully placed</span>
+      </div>
+    </div>
+  </section>
+  <section class="rct-section">
+    <h1 class="rct-title">Types of Root Canal Treatments</h1>
+    <p class="rct-subtitle">
+      In a root canal, the dentist removes infected pulp, cleans the tooth, and fills it with special material.
+    </p>
+
+    <div class="rct-cards">
+      <!-- Left card -->
+      <article class="rct-card">
+        <div class="rct-image-wrapper">
+          <!-- replace src with your own illustration -->
+          <img src="tooth-left.png" alt="Root Canal Treatment illustration">
+        </div>
+        <div class="rct-content">
+          <h2 class="rct-card-title">Root Canal Treatment</h2>
+          <p class="rct-card-tagline">Ideal for infected or damaged tooth</p>
+
+          <h3 class="rct-small-heading">Types of RCT</h3>
+          <ul class="rct-list">
+            <li>Root Canal Treatment</li>
+            <li>Split RCT</li>
+            <li>Split RCT with rubber dam</li>
+            <li>Split RCT with laser</li>
+          </ul>
+
+          <div class="rct-footer">
+            <div class="rct-price-info">
+              <span class="rct-price-label">Starting Price</span>
+              <span class="rct-price">₹ 19,999</span>
+            </div>
+            <button class="rct-btn">Get Free Consultation</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Right card -->
+      <article class="rct-card rct-card-alt">
+        <div class="rct-image-wrapper">
+          <!-- replace src with your own illustration -->
+          <img src="tooth-right.png" alt="Re-Root Canal Treatment illustration">
+        </div>
+        <div class="rct-content">
+          <h2 class="rct-card-title">Re-Root Canal Treatment</h2>
+          <p class="rct-card-tagline">
+            Ideal issues that persist or recur after an initial root canal treatment
+          </p>
+
+          <h3 class="rct-small-heading">Types of RCT</h3>
+          <ul class="rct-list">
+            <li>Re-RCT with rubber dam</li>
+            <li>Re-RCT laser specialist</li>
+            <li>Re-RCT with retrieval of old RCT filling</li>
+          </ul>
+
+          <div class="rct-footer">
+            <div class="rct-price-info">
+              <span class="rct-price-label">Starting Price</span>
+              <span class="rct-price">₹ 19,999</span>
+            </div>
+            <button class="rct-btn">Get Free Consultation</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+  
+
+<section class="safety">
+  <div class="section-heading">
+    <h2>Safety, Precision, and Innovation</h2>
+    <p>Advanced care with top safety, sterilization, and technology</p>
+  </div>
+
+  <div class="safety-cards">
+    <article class="card card-1">
+      <div class="card-overlay">
+        <h3>Uncompromised Safety</h3>
+        <p>10X Safety Protocols for a secure and worry‑free dental experience.</p>
+        <button class="link-btn">Learn More →</button>
+      </div>
+    </article>
+
+    <article class="card card-2">
+      <div class="card-overlay">
+        <h3>Assuring Cleanliness</h3>
+        <p>Rigid 4‑Step Sterilization process, assuring a safe spotless clinic.</p>
+        <button class="link-btn">Learn More →</button>
+      </div>
+    </article>
+
+    <article class="card card-3">
+      <div class="card-overlay">
+        <h3>Experience AIPS</h3>
+        <p>AI‑powered sterilization monitoring system for enhanced safety.</p>
+        <button class="link-btn">Learn More →</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="reviews-summary">
+    <div class="google-logo">G</div>
+    <div class="rating-value">4.9</div>
+    <div class="rating-text">(1.6 Lakh +)<br>Verified Google Ratings</div>
+  </div>
+
+  <div class="reviews-list">
+    <article class="review-card">
+      <div class="review-header">
+        <div class="avatar"></div>
+        <div>
+          <h4>Neha Singh</h4>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="mini-google">G</div>
+      </div>
+      <p class="review-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.
+      </p>
+    </article>
+
+    <article class="review-card">
+      <div class="review-header">
+        <div class="avatar"></div>
+        <div>
+          <h4>Neha Singh</h4>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="mini-google">G</div>
+      </div>
+      <p class="review-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.
+      </p>
+    </article>
+
+    <article class="review-card">
+      <div class="review-header">
+        <div class="avatar"></div>
+        <div>
+          <h4>Neha Singh</h4>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="mini-google">G</div>
+      </div>
+      <p class="review-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.
+      </p>
+    </article>
+  </div>
+</section>
+
+  <!-- BASIC JS: fake captcha + simple validation -->
+  <script>
+    // simple random numeric captcha
+    function generateCaptcha() {
+      const code = Math.floor(1000 + Math.random() * 9000);
+      document.getElementById("captchaText").textContent = code;
+      return code.toString();
+    }
+
+    let currentCaptcha = generateCaptcha();
+
+    const form = document.getElementById("consultationForm");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const entered = document
+        .getElementById("captchaInput")
+        .value.trim();
+
+      if (entered !== currentCaptcha) {
+        alert("Incorrect captcha. Please try again.");
+        currentCaptcha = generateCaptcha();
+        document.getElementById("captchaInput").value = "";
+        return;
+      }
+
+      alert("Appointment request submitted!");
+      form.reset();
+      currentCaptcha = generateCaptcha();
+    });
+
+    document.querySelectorAll('.rct-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    alert('Thank you! A representative will contact you shortly.');
+  });
+});
+  </script>
+  <script>
+  // Simple hover scale for cards
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'translateY(-4px)';
+      card.style.transition = 'transform 0.2s ease';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'translateY(0)';
+    });
+  });
+</script>
+
+</body>
+</html>
