@@ -831,6 +831,232 @@ body {
     padding: 18px 18px 20px;
   }
 }
+/* Basic Reset and Container */
+body {
+    font-family: Arial, sans-serif; /* Use the actual font if known */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Light background for the section */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Section Header */
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Testimonials Grid */
+.testimonials-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    margin-bottom: 60px;
+}
+
+.testimonial-item {
+    flex-basis: calc(16.666% - 20px); /* Approx 6 items wide */
+    min-width: 160px; /* Minimum size for the item */
+    text-align: center;
+}
+
+.patient-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Slightly rounded corners */
+    display: block;
+    object-fit: cover; /* Ensures image fills the space without distortion */
+    aspect-ratio: 1 / 1.15; /* Approximate height to width ratio */
+    margin-bottom: 10px;
+}
+
+.patient-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+}
+
+.patient-name {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.treatment-city {
+    color: #007bff; /* Approximate blue/light-blue color */
+    font-size: 13px;
+    display: inline-block;
+}
+
+.patient-info .treatment-city:first-of-type {
+    /* Style for the treatment (e.g., Aligners, RCT) */
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.patient-info .treatment-city:last-of-type {
+    /* Style for the city (e.g., Indore, Banglore) */
+    color: #666; /* Gray color for the city name */
+    font-size: 12px;
+}
+
+/* Booking Section */
+.booking-section {
+    background-color: #fff; /* White background for the form block */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.booking-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Booking Form */
+.booking-form {
+    text-align: left;
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.input-group input[type="text"],
+.input-group input[type="tel"] {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex-grow: 1;
+    max-width: 250px;
+    font-size: 15px;
+}
+
+.captcha-group {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 250px;
+}
+
+.captcha-group input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 15px;
+}
+
+.captcha-value {
+    background-color: #6c757d; /* Darker gray for the captcha number background */
+    color: #fff;
+    padding: 12px 15px;
+    border: 1px solid #6c757d;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: default;
+    min-width: 60px;
+    text-align: center;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.terms-text {
+    font-size: 12px;
+    color: #666;
+    flex-basis: 60%; /* Occupy left side */
+    line-height: 1.5;
+}
+
+.terms-text a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.book-button {
+    background-color: #ff8c00; /* Approximate Orange button color */
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex-basis: auto;
+    min-width: 200px;
+}
+
+.book-button:hover {
+    background-color: #e67e00;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .testimonial-item {
+        flex-basis: calc(33.333% - 20px); /* 3 items wide on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid {
+        gap: 15px;
+    }
+    .testimonial-item {
+        flex-basis: calc(50% - 15px); /* 2 items wide on tablets */
+    }
+    .input-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .input-group input[type="text"],
+    .input-group input[type="tel"],
+    .captcha-group {
+        max-width: 100%;
+    }
+    .form-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .terms-text {
+        text-align: center;
+        order: 2; /* Move terms below the button on mobile */
+    }
+    .book-button {
+        order: 1;
+        width: 100%;
+    }
+}
 
 
   </style>
@@ -1081,6 +1307,8 @@ body {
   </div>
 </section>
 
+
+
 <section class="reviews">
   <div class="reviews-summary">
     <div class="google-logo">G</div>
@@ -1133,6 +1361,89 @@ body {
   </div>
 </section>
 
+<section class="patient-stories-section">
+    <div class="container">
+        <h2 class="section-title">What Our Patients Say</h2>
+        <p class="section-subtitle">Real smiles, real stories. Here's what our patients love about their CLOVE Dental experience!</p>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-item">
+                <img src="path/to/shubham-image.jpg" alt="Shubham" class="patient-photo">
+                <div class="patient-info">
+                    <span class="patient-name">Shubham</span>
+                    <span class="treatment-city">Aligners</span>
+                    <span class="treatment-city">Indore</span>
+                </div>
+            </div>
+
+            <div class="testimonial-item">
+                <img src="path/to/shubpreet-image.jpg" alt="Shubpreet" class="patient-photo">
+                <div class="patient-info">
+                    <span class="patient-name">Shubpreet</span>
+                    <span class="treatment-city">RCT</span>
+                    <span class="treatment-city">Indore</span>
+                </div>
+            </div>
+
+            <div class="testimonial-item">
+                <img src="path/to/anita-image.jpg" alt="Anita" class="patient-photo">
+                <div class="patient-info">
+                    <span class="patient-name">Anita</span>
+                    <span class="treatment-city">Laser Treatment</span>
+                    <span class="treatment-city">Banglore</span>
+                </div>
+            </div>
+
+            <div class="testimonial-item">
+                <img src="path/to/aarti-image.jpg" alt="Aarti" class="patient-photo">
+                <div class="patient-info">
+                    <span class="patient-name">Aarti</span>
+                    <span class="treatment-city">Dentures</span>
+                    <span class="treatment-city">Indore</span>
+                </div>
+            </div>
+
+            <div class="testimonial-item">
+                <img src="path/to/aditya-image.jpg" alt="Aditya" class="patient-photo">
+                <div class="patient-info">
+                    <span class="patient-name">Aditya</span>
+                    <span class="treatment-city">Implant</span>
+                    <span class="treatment-city">Indore</span>
+                </div>
+            </div>
+
+            <div class="testimonial-item">
+                <img src="path/to/nikita-image.jpg" alt="Nikita" class="patient-photo">
+                <div class="patient-info">
+                    <span class="patient-name">Nikita</span>
+                    <span class="treatment-city">Indore</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="booking-section">
+            <h3 class="booking-title">Book an Appointment With Clove Dentist in Delhi</h3>
+            <form class="booking-form" id="bookingForm">
+                <div class="input-group">
+                    <input type="text" placeholder="Name" required>
+                    <input type="tel" placeholder="Phone" required>
+                    <div class="captcha-group">
+                        <input type="text" placeholder="Captcha" required>
+                        <button type="button" class="captcha-value">1514</button>
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <p class="terms-text">
+                        I agree to CLOVE Dental's <a href="#">Terms</a> and <a href="#">Privacy Policy</a> and consent to contact via phone, email, or SMS.
+                    </p>
+                    <button type="submit" class="book-button">Book Free Consultation</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
   <!-- BASIC JS: fake captcha + simple validation -->
   <script>
     // simple random numeric captcha
@@ -1180,7 +1491,42 @@ body {
       card.style.transform = 'translateY(0)';
     });
   });
-</script>
 
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('bookingForm');
+    const captchaValueElement = document.querySelector('.captcha-value');
+    let currentCaptcha = generateCaptcha();
+    captchaValueElement.textContent = currentCaptcha;
+
+    // Function to generate a 4-digit random number
+    function generateCaptcha() {
+        return Math.floor(1000 + Math.random() * 9000).toString();
+    }
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const captchaInput = form.querySelector('input[placeholder="Captcha"]').value;
+        const nameInput = form.querySelector('input[placeholder="Name"]').value;
+        const phoneInput = form.querySelector('input[placeholder="Phone"]').value;
+
+        if (captchaInput !== currentCaptcha) {
+            alert('Error: The Captcha entered is incorrect. Please try again.');
+            // Regenerate captcha on failure
+            currentCaptcha = generateCaptcha();
+            captchaValueElement.textContent = currentCaptcha;
+            form.querySelector('input[placeholder="Captcha"]').value = '';
+        } else {
+            // Success: Handle the form submission (e.g., send data to a server)
+            alert(`Booking initiated for ${nameInput} (${phoneInput}).`);
+            
+            // Reset the form and generate a new captcha for the next submission
+            form.reset();
+            currentCaptcha = generateCaptcha();
+            captchaValueElement.textContent = currentCaptcha;
+        }
+    });
+});
+</script>
 </body>
 </html>
